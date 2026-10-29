@@ -24,9 +24,20 @@ docs/       Wiring diagrams, images, notes
 
 ## Roadmap
 - [x] Development environment setup
-- [ ] First LED blink
+- [x] First LED blink
 - [ ] Light and motion sensors
 - [ ] LED strip and lighting modes
 - [ ] Wi-Fi connection
 - [ ] Python server + database
 - [ ] Phone control
+
+
+   ## Stage 1: First blink
+   - Blinked the onboard LED (GPIO 2), then an external LED on GPIO 23.
+   - Wiring: GPIO 23 → 220Ω resistor → LED → GND (about 6 mA).
+
+   ## Problems I solved
+   - **`bad CPU type in executable` on upload:** an Arduino build tool (`ctags`) is Intel-only. On Apple Silicon it needs Rosetta 2: `softwareupdate --install-rosetta`.
+   - **"No board selected" after Save As:** the board and port are set per sketch. Reselected ESP32 Dev Module on `/dev/cu.usbserial-0001`.
+
+
